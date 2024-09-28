@@ -1,0 +1,28 @@
+﻿@model Blog.MvcWebUI.Models.ArticleUpdateViewModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Update article</h2>
+<form asp-controller="Article" asp-action="Update" method="post">
+    <div class="form-group">
+        <label asp-for="Article.Author"></label>
+        <input asp-for="@Model.Article.Author" class="form-controller" value="@Model.Article.Author" />
+        <span asp-validation-for="Article.Author"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Article.Title"></label>
+        <input asp-for="@Model.Article.Title" class="form-controller" value="@Model.Article.Title"/>
+        <span asp-validation-for="Article.Title"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Article.Body"></label>
+        <textarea asp-for="@Model.Article.Body" class="form-controller" value="@Model.Article.Body" ></textarea>
+        <span asp-validation-for="Article.Body"></span>
+    </div>
+    <div class="form-group">
+        <input type="hidden"  asp-for="@Model.Article.Id" value="@Model.Article.Id"/>
+    </div>
+    <input type="submit" value="Update" class="btn-btn-xs btn-success" />
+</form>

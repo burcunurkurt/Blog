@@ -1,0 +1,27 @@
+﻿@model Blog.MvcWebUI.Models.ArticleAddViewModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Create a new article</h2>
+<form asp-controller="Article" asp-action="Add" method="post">
+    <div class="form-group">
+        <label asp-for="@Model.Article.Author"></label>
+        <input asp-for="@Model.Article.Author" class="form-controller" placeholder="Author" />
+        <span asp-validation-for="@Model.Article.Author">  </span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Article.Title"></label>
+        <input asp-for="@Model.Article.Title" class="form-controller" placeholder="Title" />
+        <span asp-validation-for="@Model.Article.Title">  </span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Article.Body"></label>
+        <input asp-for="Article.Body" class="form-controller" placeholder="Body" />
+        <span asp-validation-for="Article.Body">  </span>
+    </div>
+
+    <input type="submit" value="Add" class="btn-btn-xs btn-success"/>
+</form>
+

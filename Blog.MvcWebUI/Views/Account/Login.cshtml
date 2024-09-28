@@ -1,0 +1,31 @@
+﻿@using System.Threading.Tasks
+@model Blog.MvcWebUI.Models.LoginViewModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<form asp-controller="Account" asp-action="Login" method="post"  role="form">
+    <div class="mb-3">
+        <label for="userNameinput" class="form-label">User Name</label>
+        <input asp-for="UserName" class="form-control" placeholder="User Name" required autofocus>
+            <span asp-validation-for="UserName"></span>
+
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input asp-for="Password" type="password" class="form-control" id="exampleInputPassword1">
+        <span asp-validation-for="Password"></span>
+    </div>
+    <div class="mb-3 form-check">
+        <input asp-for="RememberMe" type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <div style="border-top: 1px solid #888; padding-top: 15px; font-size: 85%; position: relative; top: 10px">
+        Don't have an account!
+        <a asp-controller="Account" asp-action="Register">
+            Sign Up Here
+        </a>
+    </div>
+</form>
