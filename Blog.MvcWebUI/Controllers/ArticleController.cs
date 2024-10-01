@@ -78,7 +78,7 @@ namespace Blog.MvcWebUI.Controllers
             {
                 Articles = articles 
             };
-            return Json(model);
+            return PartialView("_ArticleListPartial", model);
         }
 
 

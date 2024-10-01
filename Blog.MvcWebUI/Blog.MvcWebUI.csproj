@@ -21,8 +21,4 @@
     <ProjectReference Include="..\Blog.Business\Blog.Business.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="ViewComponents\" />
-  </ItemGroup>
-
 </Project>

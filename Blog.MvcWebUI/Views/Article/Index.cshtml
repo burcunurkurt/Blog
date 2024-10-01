@@ -8,21 +8,7 @@
     <a class="btn btn-xs btn-success" asp-controller="Article" asp-action="Add">Add a new article</a>
 </div>
 <br />
-
-<div class="card-group ml-4 mt-4">
-    <div class="row">
-        @foreach (var article in Model.Articles)
-        {
-            <div class="card">
-                <div class="card-body" style="width: 18rem;">
-                    <h5 class="card-title">@article.Title</h5>
-                    <h6 class="card-subtitle mb-2 text-body-secondary">@article.Author</h6>
-                    <p class="card-text">@article.Body</p>
-                    <label>Create Date: @article.CreatedDate</label>
-                    <a class="btn btn-xs btn-info" asp-controller="Article" asp-action="Update" asp-route-id="@article.Id">Update</a>
-                    <a class="btn btn-xs btn-danger" asp-controller="Article" asp-action="Delete" asp-route-id="@article.Id">Delete</a>
-                </div>
-            </div>
-        }
-    </div>
+<div id="articleList">
+   <partial name="_ArticleListPartial" model="@Model" ></partial>
 </div>
+
